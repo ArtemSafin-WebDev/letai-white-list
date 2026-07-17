@@ -1,0 +1,97 @@
+<section class="faq" aria-labelledby="faq-title">
+  <div class="faq__inner">
+    <div class="faq__intro">
+      <h2 class="faq__title" id="faq-title">
+        <span class="faq__title-part">Часто</span>
+        <span class="faq__title-part">задаваемые</span>
+        <span class="faq__title-part">вопросы</span>
+      </h2>
+      <p class="faq__description">
+        Коротко о том, как пользоваться сервисами<br />
+        из белого списка
+      </p>
+    </div>
+
+    <div class="faq__list">
+      <article class="faq__item" data-accordion>
+        <button
+          class="faq__trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-answer-service"
+          data-accordion-button
+        >
+          <span class="faq__question">Нужно ли подключать услугу?</span>
+          <span class="faq__icon" aria-hidden="true">
+            <img src="/assets/faq-chevron.svg" alt="" />
+          </span>
+        </button>
+        <div class="faq__answer" id="faq-answer-service" aria-hidden="true" data-accordion-content>
+          <div class="faq__answer-clip">
+            <p>Нет, услуга доступна автоматически и не требует отдельного подключения.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq__item" data-accordion>
+        <button
+          class="faq__trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-answer-apps"
+          data-accordion-button
+        >
+          <span class="faq__question">Почему часть приложений не открывается?</span>
+          <span class="faq__icon" aria-hidden="true">
+            <img src="/assets/faq-chevron.svg" alt="" />
+          </span>
+        </button>
+        <div class="faq__answer" id="faq-answer-apps" aria-hidden="true" data-accordion-content>
+          <div class="faq__answer-clip">
+            <p>Приложение может использовать сторонние ресурсы, которые не входят в белый список.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq__item" data-accordion>
+        <button
+          class="faq__trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-answer-calls"
+          data-accordion-button
+        >
+          <span class="faq__question">Будут ли работать звонки и SMS?</span>
+          <span class="faq__icon" aria-hidden="true">
+            <img src="/assets/faq-chevron.svg" alt="" />
+          </span>
+        </button>
+        <div class="faq__answer" id="faq-answer-calls" aria-hidden="true" data-accordion-content>
+          <div class="faq__answer-clip">
+            <p>Да, звонки и SMS продолжат работать в обычном режиме.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="faq__item" data-accordion>
+        <button
+          class="faq__trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="faq-answer-list"
+          data-accordion-button
+        >
+          <span class="faq__question">Список постоянный?</span>
+          <span class="faq__icon" aria-hidden="true">
+            <img src="/assets/faq-chevron.svg" alt="" />
+          </span>
+        </button>
+        <div class="faq__answer" id="faq-answer-list" aria-hidden="true" data-accordion-content>
+          <div class="faq__answer-clip">
+            <p>Нет, белый список может обновляться по мере добавления новых ресурсов.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
