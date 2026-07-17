@@ -1,3 +1,5 @@
+@use './components/hero';
+@use './components/whitelist-overview';
 @use './components/contact-banner';
 @use './components/faq';
 
@@ -7,13 +9,23 @@
   --color-footer: #383838;
   --color-surface-muted: #e0e0e0;
   --color-accent-orange: #fe3700;
+  --color-hero-desktop: #fb4b00;
+  --color-hero-mobile: #fc4c01;
   --color-heading: #222222;
   --color-content: #090c13;
   --color-black: #000000;
+  --color-brand-blue: #0078e6;
   --color-text: #ffffff;
+  --color-text-soft: rgb(255 255 255 / 80%);
   --color-icon: #090c13;
   --color-text-muted: rgb(255 255 255 / 50%);
   --color-divider: rgb(255 255 255 / 12%);
+  --color-glass-control-stroke: rgb(255 255 255 / 20%);
+  --color-glass-border-start: rgb(255 255 255 / 32%);
+  --color-glass-border-end: rgb(255 255 255 / 20%);
+  --color-glass-gradient-start: rgb(255 255 255 / 3%);
+  --color-glass-gradient-end: rgb(255 255 255 / 18%);
+  --color-glass-base: rgb(255 255 255 / 5%);
   --footer-radius-desktop: 6rem;
   --footer-radius-mobile: 3rem;
   --content-width: 150rem;
@@ -57,7 +69,7 @@ button {
 }
 
 .page__spacer {
-  min-height: 236.8rem;
+  min-height: 23rem;
   background: var(--color-page);
 }
 
@@ -297,7 +309,7 @@ button {
 
 @media (max-width: 76.7rem) {
   .page__spacer {
-    min-height: 232.9rem;
+    min-height: 13.6rem;
   }
 
   .footer {

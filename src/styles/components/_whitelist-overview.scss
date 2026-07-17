@@ -1,0 +1,288 @@
+.whitelist-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 36rem;
+  gap: 1.8rem;
+  width: min(calc(100% - 4rem), var(--content-width));
+  margin: 0 auto 7.4rem;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.whitelist-overview__main,
+.whitelist-overview__notice {
+  min-height: 46rem;
+  border-radius: 3rem;
+}
+
+.whitelist-overview__main {
+  display: grid;
+  grid-template-areas:
+    'intro illustration'
+    'cards illustration';
+  grid-template-columns: minmax(0, 71.9rem) clamp(12rem, 16vw, 23rem);
+  grid-template-rows: auto 1fr;
+  align-content: space-between;
+  justify-content: space-between;
+  column-gap: clamp(2rem, 4vw, 8.3rem);
+  padding: 5rem 6rem 3rem 3rem;
+  overflow: hidden;
+  background: var(--color-brand-blue);
+}
+
+.whitelist-overview__intro {
+  grid-area: intro;
+}
+
+.whitelist-overview__title,
+.whitelist-overview__description,
+.whitelist-card__title,
+.whitelist-card__description,
+.whitelist-overview__notice-title,
+.whitelist-overview__notice-text {
+  margin: 0;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.whitelist-overview__title {
+  font-size: 4rem;
+  font-weight: 739;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.whitelist-overview__description {
+  max-width: 71.9rem;
+  margin-top: 3.2rem;
+  color: var(--color-text-soft);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.whitelist-overview__illustration {
+  grid-area: illustration;
+  align-self: start;
+  width: 23rem;
+  max-width: 100%;
+  height: auto;
+  margin-top: 3.5rem;
+  object-fit: contain;
+}
+
+.whitelist-overview__cards {
+  grid-area: cards;
+  align-self: end;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.whitelist-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 1fr);
+  min-height: 22.7rem;
+  padding: 2rem 1.9rem 2rem;
+  overflow: hidden;
+  border: 0.1rem solid transparent;
+  border-radius: 3rem;
+  background-color: transparent;
+  background-image:
+    linear-gradient(
+      130.0116deg,
+      var(--color-glass-gradient-start) 2.0378%,
+      var(--color-glass-gradient-end) 100%
+    ),
+    linear-gradient(var(--color-glass-base), var(--color-glass-base)),
+    linear-gradient(var(--color-brand-blue), var(--color-brand-blue)),
+    linear-gradient(
+      130.0116deg,
+      var(--color-glass-border-start),
+      var(--color-glass-border-end)
+    );
+  background-clip: padding-box, padding-box, padding-box, border-box;
+  background-origin: border-box;
+  backdrop-filter: blur(2rem);
+}
+
+.whitelist-card__content {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.whitelist-card__title {
+  font-size: 1.8rem;
+  font-weight: 540;
+  line-height: 1;
+}
+
+.whitelist-card__description {
+  margin-top: 3.6rem;
+  color: var(--color-text-soft);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.whitelist-card__arrow {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  display: grid;
+  place-items: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  border: 0.1rem solid var(--color-glass-control-stroke);
+  border-radius: 50%;
+}
+
+.whitelist-card__arrow img {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.whitelist-overview__notice {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  align-content: start;
+  padding: 3rem;
+  background: var(--color-black);
+}
+
+.whitelist-overview__notice-icon {
+  display: block;
+  width: 4.4rem;
+  height: 4.4rem;
+}
+
+.whitelist-overview__notice-title {
+  margin-top: 2.3rem;
+  font-size: 3.2rem;
+  font-weight: 739;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.whitelist-overview__notice-text {
+  width: 30.6rem;
+  margin-top: 2.6rem;
+  color: var(--color-text-soft);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.1667;
+}
+
+@media (max-width: 76.7rem) {
+  .whitelist-overview {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3.5rem;
+    width: calc(100% - 3rem);
+    margin-bottom: 3rem;
+  }
+
+  .whitelist-overview__main,
+  .whitelist-overview__notice {
+    min-height: 0;
+  }
+
+  .whitelist-overview__main {
+    grid-template-areas:
+      'intro'
+      'illustration'
+      'cards';
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 0;
+    min-height: 71.8rem;
+    padding: 3rem 0.9rem 0.9rem;
+  }
+
+  .whitelist-overview__intro {
+    padding-inline: 0.6rem;
+  }
+
+  .whitelist-overview__title {
+    font-size: 2rem;
+  }
+
+  .whitelist-overview__description {
+    max-width: 33rem;
+    margin-top: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.1667;
+  }
+
+  .whitelist-overview__illustration {
+    width: 16.8rem;
+    max-width: none;
+    margin: 3.1rem auto 0;
+  }
+
+  .whitelist-overview__cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.6rem;
+    margin-top: 2.4rem;
+  }
+
+  .whitelist-card {
+    grid-template-rows: minmax(0, 1fr);
+    min-height: 9.6rem;
+    padding: 1.2rem 1.3rem 0.9rem 1.8rem;
+    background-image:
+      linear-gradient(
+        161.8148deg,
+        var(--color-glass-gradient-start) 2.0378%,
+        var(--color-glass-gradient-end) 100%
+      ),
+      linear-gradient(var(--color-glass-base), var(--color-glass-base)),
+      linear-gradient(var(--color-brand-blue), var(--color-brand-blue)),
+      linear-gradient(
+        161.8148deg,
+        var(--color-glass-border-start),
+        var(--color-glass-border-end)
+      );
+  }
+
+  .whitelist-card__content {
+    grid-row: 1;
+    align-self: start;
+    padding-right: 0.2rem;
+  }
+
+  .whitelist-card__title {
+    font-size: 1.8rem;
+    line-height: normal;
+  }
+
+  .whitelist-card__description {
+    max-width: 27.6rem;
+    margin-top: 1.3rem;
+    font-size: 1.2rem;
+    line-height: normal;
+  }
+
+  .whitelist-card__arrow {
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .whitelist-overview__notice {
+    min-height: 37.1rem;
+    justify-items: center;
+    padding: 2.8rem 2.7rem 4rem;
+    text-align: center;
+  }
+
+  .whitelist-overview__notice-title {
+    margin-top: 2.1rem;
+  }
+
+  .whitelist-overview__notice-text {
+    width: 100%;
+    max-width: 30.6rem;
+    margin-top: 3rem;
+    font-size: 2.4rem;
+  }
+}
