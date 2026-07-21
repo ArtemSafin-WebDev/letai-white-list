@@ -414,9 +414,8 @@ export function initServicesCatalog() {
     categoryNavigation.dataset.canScrollLeft = String(canScrollLeft);
     categoryNavigation.dataset.canScrollRight = String(canScrollRight);
 
-    const hasOverflow = maxScroll > 1;
-    previousButton.disabled = !hasOverflow;
-    nextButton.disabled = !hasOverflow;
+    previousButton.disabled = !canScrollLeft;
+    nextButton.disabled = !canScrollRight;
   };
 
   const createServiceCard = (serviceGroup: ServiceGroup, index: number) => {
@@ -546,21 +545,6 @@ export function initServicesCatalog() {
   };
 
   const scrollCategories = (direction: -1 | 1) => {
-    const maxScroll =
-      categoryViewport.scrollWidth - categoryViewport.clientWidth;
-
-    if (!mobileLayout.matches) {
-      if (direction < 0 && categoryViewport.scrollLeft <= 1) {
-        categoryViewport.scrollTo({ left: maxScroll, behavior: 'smooth' });
-        return;
-      }
-
-      if (direction > 0 && categoryViewport.scrollLeft >= maxScroll - 1) {
-        categoryViewport.scrollTo({ left: 0, behavior: 'smooth' });
-        return;
-      }
-    }
-
     const distance = mobileLayout.matches
       ? categoryViewport.clientWidth
       : Math.max(250, categoryViewport.clientWidth * 0.72);

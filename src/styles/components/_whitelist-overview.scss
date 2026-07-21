@@ -17,13 +17,14 @@
 .whitelist-overview__main {
   display: grid;
   grid-template-areas:
-    'intro illustration'
-    'cards illustration';
+    "intro illustration"
+    "cards illustration";
   grid-template-columns: minmax(0, 71.9rem) 23rem;
   grid-template-rows: auto 1fr;
   align-content: space-between;
   justify-content: space-between;
   column-gap: 6rem;
+  row-gap: 3.2rem;
   padding: 5rem 6rem 3rem 3rem;
   overflow: hidden;
   background: var(--color-brand-blue);
@@ -73,14 +74,17 @@
   align-self: end;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2.5rem;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  column-gap: 2.5rem;
+  row-gap: 1.3rem;
 }
 
 .whitelist-card {
   display: grid;
+  grid-row: 1 / span 3;
   grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-rows: minmax(0, 1fr);
-  min-height: 22.7rem;
+  grid-template-rows: subgrid;
+  min-height: 0;
   padding: 2rem 1.9rem 2rem;
   overflow: hidden;
   border: 0.1rem solid transparent;
@@ -105,8 +109,10 @@
 }
 
 .whitelist-card__content {
+  display: grid;
   grid-column: 1 / -1;
-  grid-row: 1;
+  grid-row: 1 / span 2;
+  grid-template-rows: subgrid;
 }
 
 .whitelist-card__title {
@@ -116,20 +122,15 @@
 }
 
 .whitelist-card__description {
-  margin-top: 3.6rem;
   color: var(--color-text-soft);
   font-size: 1.5rem;
   font-weight: 400;
   line-height: normal;
 }
 
-.whitelist-card:nth-child(3) .whitelist-card__description {
-  margin-top: 1.3rem;
-}
-
 .whitelist-card__arrow {
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 3;
   align-self: end;
   display: grid;
   place-items: center;
@@ -191,9 +192,9 @@
 
   .whitelist-overview__main {
     grid-template-areas:
-      'intro'
-      'illustration'
-      'cards';
+      "intro"
+      "illustration"
+      "cards";
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto auto;
     column-gap: 0;
@@ -224,11 +225,13 @@
 
   .whitelist-overview__cards {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
     gap: 1.6rem;
     margin-top: 2.4rem;
   }
 
   .whitelist-card {
+    grid-row: auto;
     grid-template-rows: minmax(0, 1fr);
     min-height: 9.6rem;
     padding: 1.2rem 1.3rem 0.9rem 1.8rem;
@@ -248,6 +251,7 @@
   }
 
   .whitelist-card__content {
+    display: block;
     grid-row: 1;
     align-self: start;
     padding-right: 0.2rem;
