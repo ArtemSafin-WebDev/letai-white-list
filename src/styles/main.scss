@@ -45,6 +45,17 @@
 
 html {
   font-size: calc(100vw / 192);
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 2.4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
