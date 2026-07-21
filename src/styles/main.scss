@@ -4,6 +4,7 @@
 @use "./components/services-catalog";
 @use "./components/contact-banner";
 @use "./components/faq";
+@use "./components/lead-modal";
 
 :root {
   --font-family-base: "Roboto Flex Variable", "Roboto Flex", sans-serif;
