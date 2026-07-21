@@ -332,6 +332,7 @@ export function initServicesCatalog() {
   let activeCategory = 'Все';
   let query = '';
   let isExpanded = false;
+  let areMobileCategoriesExpanded = false;
 
   const appendHighlightedText = (target: HTMLElement, text: string) => {
     const term = query.trim();
@@ -397,6 +398,14 @@ export function initServicesCatalog() {
   };
 
   const updateCategoryScrollState = () => {
+    if (mobileLayout.matches) {
+      categoryNavigation.dataset.canScrollLeft = 'false';
+      categoryNavigation.dataset.canScrollRight = 'false';
+      previousButton.disabled = true;
+      nextButton.disabled = true;
+      return;
+    }
+
     const maxScroll =
       categoryViewport.scrollWidth - categoryViewport.clientWidth;
     const canScrollLeft = categoryViewport.scrollLeft > 1;
@@ -405,14 +414,9 @@ export function initServicesCatalog() {
     categoryNavigation.dataset.canScrollLeft = String(canScrollLeft);
     categoryNavigation.dataset.canScrollRight = String(canScrollRight);
 
-    if (mobileLayout.matches) {
-      previousButton.disabled = !canScrollLeft;
-      nextButton.disabled = !canScrollRight;
-    } else {
-      const hasOverflow = maxScroll > 1;
-      previousButton.disabled = !hasOverflow;
-      nextButton.disabled = !hasOverflow;
-    }
+    const hasOverflow = maxScroll > 1;
+    previousButton.disabled = !hasOverflow;
+    nextButton.disabled = !hasOverflow;
   };
 
   const createServiceCard = (serviceGroup: ServiceGroup, index: number) => {
@@ -493,29 +497,49 @@ export function initServicesCatalog() {
   const renderCategories = () => {
     categoryTrack.replaceChildren();
 
-    for (let index = 0; index < CATEGORY_ORDER.length; index += 8) {
-      const page = document.createElement('div');
-      page.className = 'services-catalog__category-page';
+    const visibleCategories =
+      mobileLayout.matches && !areMobileCategoriesExpanded
+        ? CATEGORY_ORDER.slice(0, 8)
+        : CATEGORY_ORDER;
 
-      CATEGORY_ORDER.slice(index, index + 8).forEach((category) => {
-        const button = document.createElement('button');
-        button.className = 'services-catalog__category';
-        button.type = 'button';
-        button.dataset.category = category;
-        button.textContent = category;
-        button.setAttribute('aria-pressed', String(category === activeCategory));
+    visibleCategories.forEach((category) => {
+      const button = document.createElement('button');
+      button.className = 'services-catalog__category';
+      button.type = 'button';
+      button.dataset.category = category;
+      button.textContent = category;
+      button.setAttribute('aria-pressed', String(category === activeCategory));
 
-        button.addEventListener('click', () => {
-          activeCategory = category;
-          isExpanded = false;
-          updateCategoryButtons();
-          renderCards();
-        });
-
-        page.append(button);
+      button.addEventListener('click', () => {
+        activeCategory = category;
+        isExpanded = false;
+        updateCategoryButtons();
+        renderCards();
       });
 
-      categoryTrack.append(page);
+      categoryTrack.append(button);
+    });
+
+    if (mobileLayout.matches && !areMobileCategoriesExpanded) {
+      const showAllButton = document.createElement('button');
+      const showAllIcon = document.createElement('img');
+
+      showAllButton.className = 'services-catalog__category-toggle';
+      showAllButton.type = 'button';
+      showAllButton.setAttribute('aria-label', 'Показать все категории');
+      showAllButton.setAttribute('aria-expanded', 'false');
+
+      showAllIcon.src = '/assets/services-arrow-next.svg';
+      showAllIcon.width = 24;
+      showAllIcon.height = 24;
+      showAllIcon.alt = '';
+
+      showAllButton.append(showAllIcon);
+      showAllButton.addEventListener('click', () => {
+        areMobileCategoriesExpanded = true;
+        renderCategories();
+      });
+      categoryTrack.append(showAllButton);
     }
 
     requestAnimationFrame(updateCategoryScrollState);
@@ -577,8 +601,9 @@ export function initServicesCatalog() {
   mobileLayout.addEventListener('change', () => {
     categoryViewport.scrollTo({ left: 0 });
     isExpanded = false;
+    areMobileCategoriesExpanded = false;
+    renderCategories();
     renderCards();
-    requestAnimationFrame(updateCategoryScrollState);
   });
 
   window.addEventListener('resize', updateCategoryScrollState, {

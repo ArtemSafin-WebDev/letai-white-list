@@ -1,12 +1,12 @@
-@use './components/header';
-@use './components/hero';
-@use './components/whitelist-overview';
-@use './components/services-catalog';
-@use './components/contact-banner';
-@use './components/faq';
+@use "./components/header";
+@use "./components/hero";
+@use "./components/whitelist-overview";
+@use "./components/services-catalog";
+@use "./components/contact-banner";
+@use "./components/faq";
 
 :root {
-  --font-family-base: 'Roboto Flex Variable', 'Roboto Flex', sans-serif;
+  --font-family-base: "Roboto Flex Variable", "Roboto Flex", sans-serif;
   --color-page: #ffffff;
   --color-header-muted: #f4f4f4;
   --color-header-accent: #fe5000;
@@ -44,7 +44,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: calc(100vw / 192);
 }
 
 body {
@@ -53,7 +53,7 @@ body {
   color: var(--color-text);
   background: var(--color-page);
   font-family: var(--font-family-base);
-  font-variation-settings: 'wdth' 140;
+  font-variation-settings: "wdth" 140;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -101,7 +101,9 @@ button {
 .footer__menu a,
 .footer__legal a,
 .footer__developer {
-  transition: color var(--transition-fast), opacity var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    opacity var(--transition-fast);
 }
 
 .footer__quick-links a:hover,
@@ -294,6 +296,10 @@ button {
   white-space: nowrap;
 }
 
+.footer__meta {
+  display: contents;
+}
+
 .footer__legal a:hover,
 .footer__legal a:focus-visible,
 .footer__developer:hover,
@@ -317,7 +323,11 @@ button {
   width: 3.2rem;
 }
 
-@media (max-width: 76.7rem) {
+@media (max-width: 767px) {
+  html {
+    font-size: 10px;
+  }
+
   .footer {
     border-radius: var(--footer-radius-mobile) var(--footer-radius-mobile) 0 0;
   }
@@ -328,7 +338,7 @@ button {
     column-gap: 0.5rem;
     width: auto;
     margin: 0;
-    padding: 4rem 1.5rem 11.6rem;
+    padding: 4rem 1.5rem 5rem;
   }
 
   .footer__quick-links {
@@ -336,6 +346,7 @@ button {
     grid-row: 1;
     grid-auto-flow: row;
     grid-template-rows: repeat(5, minmax(4rem, auto));
+    align-content: start;
     gap: 0;
     padding: 0 0 4rem;
     border: 0;
@@ -355,6 +366,7 @@ button {
     grid-column: 2;
     grid-row: 1;
     grid-template-columns: 1fr;
+    align-content: start;
     gap: 0;
     margin: 0 0 4rem;
   }
@@ -450,21 +462,27 @@ button {
   }
 
   .footer__legal {
-    grid-column: 1 / -1;
-    grid-row: 4;
+    grid-column: 1;
     grid-auto-flow: row;
     gap: 1.5rem;
-    margin-top: 4.8rem;
     font-size: 1rem;
+  }
+
+  .footer__meta {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    margin-top: 4.8rem;
   }
 
   .footer__developer {
     grid-column: 2;
-    grid-row: 4;
+    grid-template-columns: 1fr;
     justify-self: end;
+    gap: 0;
     width: 3.2rem;
-    margin-top: -0.3rem;
-    transform: translateY(2rem);
   }
 
   .footer__developer span {

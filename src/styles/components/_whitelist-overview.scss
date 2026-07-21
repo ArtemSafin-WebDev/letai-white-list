@@ -23,7 +23,7 @@
   grid-template-rows: auto 1fr;
   align-content: space-between;
   justify-content: space-between;
-  column-gap: 8.3rem;
+  column-gap: 6rem;
   padding: 5rem 6rem 3rem 3rem;
   overflow: hidden;
   background: var(--color-brand-blue);
@@ -176,19 +176,7 @@
   line-height: 1.1667;
 }
 
-@media (max-width: 2075px) {
-  .whitelist-overview__main {
-    column-gap: 6rem;
-  }
-}
-
-@media (max-width: 1437px) {
-  .whitelist-overview__main {
-    grid-template-columns: minmax(0, 71.9rem) 20rem;
-  }
-}
-
-@media (max-width: 76.7rem) {
+@media (max-width: 767px) {
   .whitelist-overview {
     grid-template-columns: minmax(0, 1fr);
     gap: 3.5rem;

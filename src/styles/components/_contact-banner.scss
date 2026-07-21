@@ -93,7 +93,7 @@
   outline-offset: 0.3rem;
 }
 
-@media (max-width: 76.7rem) {
+@media (max-width: 767px) {
   .contact-banner {
     width: calc(100% - 3rem);
     aspect-ratio: 6 / 7;
@@ -124,7 +124,7 @@
 
   .contact-banner__title {
     font-size: 3rem;
-    line-height: 0.9;
+    line-height: 1.1;
   }
 
   .contact-banner__description {

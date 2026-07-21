@@ -5,8 +5,12 @@
         <nav class="site-header__utility-nav" aria-label="Разделы сайта">
           <a href="https://letai.ru/">На главную</a>
           <a href="https://letai.ru/">Частным клиентам</a>
-          <a href="https://letai.ru/">Бизнесу</a>
-          <a href="https://letai.ru/">О компании</a>
+          <a class="site-header__utility-nav-link--muted" href="https://letai.ru/">
+            Бизнесу
+          </a>
+          <a class="site-header__utility-nav-link--muted" href="https://letai.ru/">
+            О компании
+          </a>
         </nav>
 
         <div class="site-header__utility-actions">
@@ -65,6 +69,7 @@
           <span class="site-header__menu-icon" aria-hidden="true">
             <span></span>
             <span></span>
+            <span></span>
           </span>
         </button>
       </div>
@@ -75,16 +80,32 @@
 <div
   class="mobile-menu"
   id="mobile-menu"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Меню"
   aria-hidden="true"
   data-mobile-menu
+  data-mobile-menu-panel
 >
-  <div
-    class="mobile-menu__panel"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Меню"
-    data-mobile-menu-panel
-  >
+  <div class="mobile-menu__header">
+    <a class="site-header__mobile-logo" href="https://letai.ru/" aria-label="Летай — на главную">
+      <img src="/assets/logotype.svg" width="88" height="20" alt="Летай" />
+    </a>
+
+    <button
+      class="site-header__menu-button mobile-menu__close"
+      type="button"
+      aria-label="Закрыть меню"
+      data-menu-close
+    >
+      <span class="mobile-menu__close-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+
+  <div class="mobile-menu__panel">
     <nav class="mobile-menu__primary" aria-label="Навигация по странице">
       <a href="#whitelist-overview-title">О списке</a>
       <a href="#services">Сервисы</a>

@@ -21,10 +21,11 @@ accordionButtons.forEach((button) => {
 
 function initMobileMenu() {
   const menuButton = document.querySelector<HTMLButtonElement>('[data-menu-button]');
+  const menuCloseButton = document.querySelector<HTMLButtonElement>('[data-menu-close]');
   const mobileMenu = document.querySelector<HTMLElement>('[data-mobile-menu]');
   const mobileMenuPanel = document.querySelector<HTMLElement>('[data-mobile-menu-panel]');
 
-  if (!menuButton || !mobileMenu || !mobileMenuPanel) return;
+  if (!menuButton || !menuCloseButton || !mobileMenu || !mobileMenuPanel) return;
 
   const mobileBreakpoint = window.matchMedia('(max-width: 767px)');
   const focusableSelector = [
@@ -36,7 +37,6 @@ function initMobileMenu() {
     '[tabindex]:not([tabindex="-1"])',
   ].join(',');
 
-  let scrollPosition = 0;
   let lastFocusedElement: HTMLElement | null = null;
   let focusTimer: number | undefined;
 
@@ -50,14 +50,11 @@ function initMobileMenu() {
 
     window.clearTimeout(focusTimer);
     document.documentElement.classList.remove('menu-open');
-    document.documentElement.style.removeProperty('--scroll-lock-offset');
-    document.documentElement.style.removeProperty('--scrollbar-compensation');
 
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-label', 'Открыть меню');
     mobileMenu.setAttribute('aria-hidden', 'true');
     mobileMenu.classList.remove('is-open');
-    window.scrollTo(0, scrollPosition);
 
     if (restoreFocus) {
       lastFocusedElement?.focus();
@@ -65,23 +62,11 @@ function initMobileMenu() {
   };
 
   const openMenu = () => {
-    scrollPosition = window.scrollY;
     lastFocusedElement =
       document.activeElement instanceof HTMLElement
         ? document.activeElement
         : null;
 
-    const scrollbarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
-
-    document.documentElement.style.setProperty(
-      '--scroll-lock-offset',
-      `${-scrollPosition}px`,
-    );
-    document.documentElement.style.setProperty(
-      '--scrollbar-compensation',
-      `${scrollbarWidth}px`,
-    );
     document.documentElement.classList.add('menu-open');
 
     menuButton.setAttribute('aria-expanded', 'true');
@@ -91,18 +76,16 @@ function initMobileMenu() {
 
     focusTimer = window.setTimeout(() => {
       if (mobileMenu.classList.contains('is-open')) {
-        getFocusableElements()[0]?.focus();
+        getFocusableElements()[0]?.focus({ preventScroll: true });
       }
-    }, 260);
+    }, 0);
   };
 
   menuButton.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('is-open')) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    openMenu();
   });
+
+  menuCloseButton.addEventListener('click', () => closeMenu());
 
   mobileMenu.addEventListener('pointerdown', (event) => {
     if (event.target === mobileMenu) {
