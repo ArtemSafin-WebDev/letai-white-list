@@ -4,7 +4,7 @@
   grid-template-rows: minmax(0, 1fr);
   width: min(calc(100% - 4rem), var(--content-width));
   height: 52rem;
-  margin: 0 auto 8rem;
+  margin: 7.6rem auto 8rem;
   overflow: hidden;
   border: 0.1rem solid var(--color-text);
   border-radius: 3rem;
@@ -24,7 +24,6 @@
   width: 81.1rem;
   height: 54rem;
   margin: -1.1rem 0 0 71.6rem;
-  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero__picture img {
@@ -48,8 +47,6 @@
 .hero__subtitle,
 .hero__description {
   margin: 0;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
 }
 
 .hero__title {
@@ -59,14 +56,6 @@
   line-height: 1;
   letter-spacing: 0;
   text-transform: uppercase;
-}
-
-.hero__title-word {
-  display: inline;
-}
-
-.hero__title-word--last {
-  display: block;
 }
 
 .hero__subtitle {
@@ -109,12 +98,10 @@
   font-weight: 540;
   line-height: normal;
   letter-spacing: -0.02em;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
   transition:
+    border-color var(--transition-fast),
     color var(--transition-fast),
-    background-color var(--transition-fast),
-    transform var(--transition-fast);
+    background-color var(--transition-fast);
 }
 
 .hero__button--primary {
@@ -128,23 +115,17 @@
 }
 
 @media (hover: hover) {
-  .hero:has(.hero__button:hover) .hero__picture {
-    transform: scale(1.01);
-  }
-
-  .hero__button:hover,
-  .hero__button:focus-visible {
-    transform: translateY(-0.2rem);
-  }
-
   .hero__button--primary:hover,
   .hero__button--primary:focus-visible {
-    background: var(--color-surface-muted);
+    border-color: var(--color-content);
+    color: var(--color-text);
+    background: var(--color-content);
   }
 
   .hero__button--secondary:hover,
   .hero__button--secondary:focus-visible {
-    background: var(--color-glass-base);
+    color: var(--color-accent-orange);
+    background: var(--color-text);
   }
 }
 
@@ -152,7 +133,7 @@
   .hero {
     width: calc(100% - 3rem);
     height: 47.2rem;
-    margin-bottom: 3.2rem;
+    margin: 0 auto 3.2rem;
     border: 0;
     background: var(--color-hero-mobile);
   }
@@ -171,10 +152,6 @@
   .hero__title {
     max-width: 33rem;
     font-size: 4rem;
-  }
-
-  .hero__title-word {
-    display: block;
   }
 
   .hero__subtitle {

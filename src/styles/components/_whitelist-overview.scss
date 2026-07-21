@@ -19,11 +19,11 @@
   grid-template-areas:
     'intro illustration'
     'cards illustration';
-  grid-template-columns: minmax(0, 71.9rem) clamp(12rem, 16vw, 23rem);
+  grid-template-columns: minmax(0, 71.9rem) 23rem;
   grid-template-rows: auto 1fr;
   align-content: space-between;
   justify-content: space-between;
-  column-gap: clamp(2rem, 4vw, 8.3rem);
+  column-gap: 8.3rem;
   padding: 5rem 6rem 3rem 3rem;
   overflow: hidden;
   background: var(--color-brand-blue);
@@ -40,8 +40,6 @@
 .whitelist-overview__notice-title,
 .whitelist-overview__notice-text {
   margin: 0;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
 }
 
 .whitelist-overview__title {
@@ -53,7 +51,7 @@
 
 .whitelist-overview__description {
   max-width: 71.9rem;
-  margin-top: 3.2rem;
+  margin-top: 2rem;
   color: var(--color-text-soft);
   font-size: 2rem;
   font-weight: 400;
@@ -125,6 +123,10 @@
   line-height: normal;
 }
 
+.whitelist-card:nth-child(3) .whitelist-card__description {
+  margin-top: 1.3rem;
+}
+
 .whitelist-card__arrow {
   grid-column: 2;
   grid-row: 1;
@@ -172,6 +174,18 @@
   font-size: 2.4rem;
   font-weight: 400;
   line-height: 1.1667;
+}
+
+@media (max-width: 2075px) {
+  .whitelist-overview__main {
+    column-gap: 6rem;
+  }
+}
+
+@media (max-width: 1437px) {
+  .whitelist-overview__main {
+    grid-template-columns: minmax(0, 71.9rem) 20rem;
+  }
 }
 
 @media (max-width: 76.7rem) {

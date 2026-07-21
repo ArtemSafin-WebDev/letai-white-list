@@ -1,0 +1,118 @@
+<header class="site-header">
+  <div class="site-header__desktop">
+    <div class="site-header__topbar">
+      <div class="site-header__container site-header__topbar-inner">
+        <nav class="site-header__utility-nav" aria-label="Разделы сайта">
+          <a href="https://letai.ru/">На главную</a>
+          <a href="https://letai.ru/">Частным клиентам</a>
+          <a href="https://letai.ru/">Бизнесу</a>
+          <a href="https://letai.ru/">О компании</a>
+        </nav>
+
+        <div class="site-header__utility-actions">
+          <button class="site-header__utility-action" type="button">
+            <img src="/assets/location.svg" width="16" height="16" alt="" />
+            <span>Казань</span>
+          </button>
+          <button class="site-header__utility-action" type="button">
+            <img src="/assets/user-solid.svg" width="16" height="16" alt="" />
+            <span>Войти</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-header__main">
+      <div class="site-header__container site-header__main-inner">
+        <div class="site-header__brand-navigation">
+          <a class="site-header__logo" href="https://letai.ru/" aria-label="Летай — на главную">
+            <img src="/assets/logotype.svg" width="136" height="34" alt="Летай" />
+          </a>
+
+          <nav class="site-header__primary-nav" aria-label="Навигация по странице">
+            <a href="#whitelist-overview-title">О списке</a>
+            <a href="#services">Сервисы</a>
+            <a href="#faq-title">Вопросы</a>
+          </nav>
+        </div>
+
+        <a class="site-header__subscribe" href="https://letai.ru/">
+          Стать абонентом
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-header__mobile">
+    <div class="site-header__mobile-row">
+      <a class="site-header__mobile-logo" href="https://letai.ru/" aria-label="Летай — на главную">
+        <img src="/assets/logotype.svg" width="88" height="20" alt="Летай" />
+      </a>
+
+      <div class="site-header__mobile-actions">
+        <button class="site-header__profile" type="button" aria-label="Войти">
+          <img src="/assets/user-outline.svg" width="24" height="24" alt="" />
+        </button>
+
+        <button
+          class="site-header__menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Открыть меню"
+          data-menu-button
+        >
+          <span class="site-header__menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div
+  class="mobile-menu"
+  id="mobile-menu"
+  aria-hidden="true"
+  data-mobile-menu
+>
+  <div
+    class="mobile-menu__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Меню"
+    data-mobile-menu-panel
+  >
+    <nav class="mobile-menu__primary" aria-label="Навигация по странице">
+      <a href="#whitelist-overview-title">О списке</a>
+      <a href="#services">Сервисы</a>
+      <a href="#faq-title">Вопросы</a>
+    </nav>
+
+    <div class="mobile-menu__divider" aria-hidden="true"></div>
+
+    <nav class="mobile-menu__secondary" aria-label="Разделы сайта">
+      <a href="https://letai.ru/">На главную</a>
+      <a href="https://letai.ru/">Частным клиентам</a>
+      <a href="https://letai.ru/">Бизнесу</a>
+      <a href="https://letai.ru/">О компании</a>
+    </nav>
+
+    <div class="mobile-menu__meta">
+      <button type="button">
+        <img src="/assets/location.svg" width="16" height="16" alt="" />
+        <span>Казань</span>
+      </button>
+      <button type="button">
+        <img src="/assets/user-solid.svg" width="16" height="16" alt="" />
+        <span>Войти</span>
+      </button>
+    </div>
+
+    <a class="mobile-menu__subscribe" href="https://letai.ru/">
+      Стать абонентом
+    </a>
+  </div>
+</div>

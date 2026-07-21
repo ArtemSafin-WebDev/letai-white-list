@@ -1,0 +1,95 @@
+<section class="services-catalog" id="services" aria-labelledby="services-catalog-title">
+  <div class="services-catalog__inner">
+    <header class="services-catalog__header">
+      <h2 class="services-catalog__title" id="services-catalog-title">
+        Какие сервисы доступны
+      </h2>
+      <p class="services-catalog__description">
+        Воспользуйтесь поиском или выберите категорию. Доступность конкретного
+        сайта или приложения зависит от действующего списка в момент ограничения.
+      </p>
+    </header>
+
+    <div class="services-catalog__toolbar">
+      <div class="services-catalog__navigation">
+        <div
+          class="services-catalog__categories"
+          data-category-viewport
+          aria-label="Категории сервисов"
+        >
+          <div class="services-catalog__category-track" data-category-track></div>
+        </div>
+      </div>
+
+      <div class="services-catalog__nav-controls">
+        <button
+          class="services-catalog__nav-button"
+          type="button"
+          aria-label="Предыдущие категории"
+          data-category-prev
+        >
+          <img src="/assets/services-arrow-prev.svg" width="24" height="24" alt="" />
+        </button>
+        <button
+          class="services-catalog__nav-button"
+          type="button"
+          aria-label="Следующие категории"
+          data-category-next
+        >
+          <img src="/assets/services-arrow-next.svg" width="24" height="24" alt="" />
+        </button>
+      </div>
+
+      <label class="services-catalog__search">
+        <span class="services-catalog__visually-hidden">Поиск сервиса</span>
+        <img
+          class="services-catalog__search-icon"
+          src="/assets/services-search.svg"
+          width="18"
+          height="18"
+          alt=""
+        />
+        <input
+          class="services-catalog__search-input"
+          type="search"
+          placeholder="Поиск"
+          autocomplete="off"
+          data-service-search
+        />
+        <button
+          class="services-catalog__search-clear"
+          type="button"
+          aria-label="Очистить поиск"
+          data-service-search-clear
+          hidden
+        >
+          ×
+        </button>
+      </label>
+    </div>
+
+    <div
+      class="services-catalog__grid"
+      data-service-grid
+      aria-live="polite"
+      aria-atomic="false"
+    ></div>
+
+    <button
+      class="services-catalog__expand"
+      type="button"
+      aria-expanded="false"
+      aria-label="Показать все сервисы"
+      data-service-expand
+      hidden
+    >
+      <img src="/assets/services-expand.svg" width="15" height="12" alt="" />
+    </button>
+
+    <p class="services-catalog__note">
+      Перечень приведён для информирования абонентов. Часть приложений может
+      использовать сторонние ресурсы вне белого списка — тогда отдельные функции
+      могут быть недоступны.
+    </p>
+  </div>
+</section>

@@ -1,11 +1,15 @@
+@use './components/header';
 @use './components/hero';
 @use './components/whitelist-overview';
+@use './components/services-catalog';
 @use './components/contact-banner';
 @use './components/faq';
 
 :root {
   --font-family-base: 'Roboto Flex Variable', 'Roboto Flex', sans-serif;
   --color-page: #ffffff;
+  --color-header-muted: #f4f4f4;
+  --color-header-accent: #fe5000;
   --color-footer: #383838;
   --color-surface-muted: #e0e0e0;
   --color-accent-orange: #fe3700;
@@ -66,11 +70,6 @@ a {
 button {
   color: inherit;
   font: inherit;
-}
-
-.page__spacer {
-  min-height: 23rem;
-  background: var(--color-page);
 }
 
 .footer {
@@ -145,6 +144,12 @@ button {
   font-size: 2.8rem;
   font-weight: 450;
   line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.footer__phone:hover,
+.footer__phone:focus-visible {
+  color: var(--color-accent-orange);
 }
 
 .footer__socials,
@@ -162,19 +167,24 @@ button {
   place-items: center;
   border-radius: 50%;
   background: var(--color-text);
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .footer__icon-button img {
   display: block;
   width: 2.4rem;
   aspect-ratio: 1;
+  transition: filter var(--transition-fast);
 }
 
 .footer__icon-button:hover,
 .footer__icon-button:focus-visible {
-  transform: scale(0.94);
-  opacity: 0.72;
+  background: var(--color-accent-orange);
+}
+
+.footer__icon-button:hover img,
+.footer__icon-button:focus-visible img {
+  filter: brightness(0) invert(1);
 }
 
 .footer__navigation {
@@ -308,10 +318,6 @@ button {
 }
 
 @media (max-width: 76.7rem) {
-  .page__spacer {
-    min-height: 13.6rem;
-  }
-
   .footer {
     border-radius: var(--footer-radius-mobile) var(--footer-radius-mobile) 0 0;
   }

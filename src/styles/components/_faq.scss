@@ -61,15 +61,11 @@
   align-items: center;
   gap: 2rem;
   width: 100%;
-  min-height: 10.1rem;
   padding: 2.6rem 2.6rem 2.6rem 3rem;
   border: 0;
   background: transparent;
   text-align: left;
   cursor: pointer;
-  transition:
-    min-height var(--transition-accordion),
-    color var(--transition-fast);
 }
 
 .faq__question {
@@ -126,16 +122,6 @@
   line-height: 1;
   letter-spacing: -0.02em;
   opacity: 0.8;
-}
-
-.faq__item.is-open .faq__trigger {
-  align-items: start;
-  min-height: 7.4rem;
-  padding-bottom: 0;
-}
-
-.faq__item.is-open .faq__question {
-  padding-top: 1.4rem;
 }
 
 .faq__item.is-open .faq__icon {
@@ -195,7 +181,6 @@
   }
 
   .faq__trigger {
-    min-height: 8rem;
     padding: 2rem 1.5rem;
   }
 
@@ -215,12 +200,4 @@
     opacity: 0.5;
   }
 
-  .faq__item.is-open .faq__trigger {
-    min-height: 5.2rem;
-    padding: 2.8rem 1.5rem 0;
-  }
-
-  .faq__item.is-open .faq__question {
-    padding-top: 0;
-  }
 }

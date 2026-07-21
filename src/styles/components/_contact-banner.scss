@@ -51,20 +51,8 @@
   max-width: 106rem;
   font-size: 7rem;
   font-weight: 739;
-  line-height: 0.9;
+  line-height: 1.1;
   letter-spacing: 0;
-}
-
-.contact-banner__title-part {
-  display: inline;
-}
-
-.contact-banner__title-part:first-child::after {
-  content: ' ';
-}
-
-.contact-banner__title-part:last-child {
-  display: block;
 }
 
 .contact-banner__description {
@@ -91,15 +79,13 @@
   cursor: pointer;
   transition:
     color var(--transition-fast),
-    background-color var(--transition-fast),
-    transform var(--transition-fast);
+    background-color var(--transition-fast);
 }
 
 .contact-banner__button:hover,
 .contact-banner__button:focus-visible {
   color: var(--color-page);
   background: var(--color-icon);
-  transform: translateY(-0.2rem);
 }
 
 .contact-banner__button:focus-visible {
@@ -139,14 +125,6 @@
   .contact-banner__title {
     font-size: 3rem;
     line-height: 0.9;
-  }
-
-  .contact-banner__title-part {
-    display: block;
-  }
-
-  .contact-banner__title-part:first-child::after {
-    content: none;
   }
 
   .contact-banner__description {
