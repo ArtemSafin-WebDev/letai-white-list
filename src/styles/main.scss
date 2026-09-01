@@ -4,7 +4,16 @@
 @use "./components/services-catalog";
 @use "./components/contact-banner";
 @use "./components/faq";
+@use "./components/callback-form";
+@use "./components/tv-hero";
+@use "./components/tv-access";
+@use "./components/tv-benefits";
+@use "./components/tv-entertainment";
+@use "./components/tv-multiscreen";
+@use "./components/tv-reasons";
+@use "./components/tariffs";
 @use "./components/lead-modal";
+@use "./components/breadcrumbs";
 
 :root {
   --font-family-base: "Roboto Flex Variable", "Roboto Flex", sans-serif;
@@ -67,6 +76,17 @@ body {
   font-family: var(--font-family-base);
   font-variation-settings: "wdth" 140;
   -webkit-font-smoothing: antialiased;
+}
+
+.letai-tv-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #161616;
+}
+
+.letai-tv-page__content {
+  flex: 0 0 auto;
 }
 
 a {
@@ -335,6 +355,48 @@ button {
   width: 3.2rem;
 }
 
+.footer--tv {
+  min-height: 69.4rem;
+  background: transparent;
+}
+
+.footer--tv .footer__container {
+  padding-block: 5rem 0;
+}
+
+.footer--tv .footer__main {
+  border-bottom: 0.1rem solid var(--color-divider);
+}
+
+.footer--tv .accordion__button {
+  margin: 0;
+}
+
+.footer__mobile-panel {
+  display: contents;
+}
+
+.footer__legal-copy {
+  display: grid;
+  height: 14.8rem;
+  align-content: start;
+  gap: 1.6rem;
+  padding-top: 4.8rem;
+  color: var(--color-text-muted);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.footer__legal-copy p {
+  margin: 0;
+}
+
+.footer__legal-break {
+  display: none;
+}
+
 @media (max-width: 767px) {
   html {
     font-size: 10px;
@@ -499,6 +561,47 @@ button {
 
   .footer__developer span {
     display: none;
+  }
+
+  .footer--tv {
+    min-height: 0;
+    border-radius: 0 0 var(--footer-radius-mobile) var(--footer-radius-mobile);
+    background: #161616;
+  }
+
+  .footer--tv .footer__container {
+    display: block;
+    padding: 7.8rem 0 4rem;
+  }
+
+  .footer--tv .footer__mobile-panel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.5rem;
+    padding: 4rem 1.5rem 0;
+    border-radius: var(--footer-radius-mobile);
+    background: var(--color-footer);
+  }
+
+  .footer--tv .footer__support {
+    border-bottom: 0;
+  }
+
+  .footer--tv .footer__legal-copy {
+    display: grid;
+    height: auto;
+    gap: 2rem;
+    margin: 3rem 1.5rem 0;
+    padding-top: 0;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.02em;
+  }
+
+  .footer__legal-break {
+    display: initial;
   }
 }
 

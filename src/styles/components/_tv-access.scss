@@ -1,0 +1,549 @@
+.tv-access {
+  --tv-access-accent: #fe5000;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  width: min(calc(100% - 4rem), var(--content-width));
+  margin: 7.5rem auto 0;
+}
+
+.tv-access__card {
+  position: relative;
+  min-width: 0;
+  height: 40rem;
+  overflow: hidden;
+  border-radius: 3rem;
+  color: var(--color-text);
+  background: var(--color-heading);
+  isolation: isolate;
+}
+
+.tv-access__card--smart-tv {
+  display: grid;
+  grid-column: 1 / -1;
+}
+
+.tv-access__copy {
+  z-index: 2;
+}
+
+.tv-access__copy--smart-tv {
+  padding: 5rem 0 0 3rem;
+}
+
+.tv-access__card--box {
+  display: grid;
+  padding: 5rem 3rem 3rem;
+  grid-template-rows: auto 1fr auto;
+}
+
+.tv-access__card--app {
+  display: grid;
+  padding: 5rem 3rem 3rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto 1fr auto;
+  column-gap: 2rem;
+}
+
+.tv-access__title,
+.tv-access__description,
+.tv-access__models-label,
+.tv-access__price-label,
+.tv-access__price {
+  margin: 0;
+}
+
+.tv-access__title {
+  font-size: 4.1rem;
+  font-weight: 739;
+  line-height: 1;
+}
+
+.tv-access__description {
+  margin-top: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.tv-access__models {
+  margin-top: 7.8rem;
+}
+
+.tv-access__models-label {
+  font-size: 1.8rem;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.tv-access__model-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 0.4rem;
+  width: 30.5rem;
+  margin-top: 1rem;
+}
+
+.tv-access__model {
+  display: inline-flex;
+  height: 5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 4.2rem;
+  color: var(--color-content);
+  background: var(--color-page);
+  cursor: pointer;
+}
+
+.tv-access__model:focus-visible {
+  outline: 0.2rem solid var(--tv-access-accent);
+  outline-offset: 0.2rem;
+}
+
+.tv-access__model span {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.tv-access__model-logo {
+  display: block;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.tv-access__model-logo--lg {
+  width: 3.9rem;
+  height: 1.9rem;
+}
+
+.tv-access__model-logo--samsung {
+  width: 8.1rem;
+  height: 2.2rem;
+}
+
+.tv-access__model-logo--haier {
+  width: 4.3rem;
+  height: 1.7rem;
+}
+
+.tv-access__model-logo--tcl {
+  width: 4.3rem;
+  height: 2.6rem;
+}
+
+.tv-access__model-logo--mi {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+.tv-access__gradient {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  max-width: none;
+  pointer-events: none;
+}
+
+.tv-access__gradient--smart-tv {
+  top: -14.9rem;
+  right: -10.3rem;
+  width: 122.1rem;
+  height: 69.6rem;
+}
+
+.tv-access__smart-tv-picture {
+  display: contents;
+}
+
+.tv-access__smart-tv-image {
+  position: absolute;
+  z-index: 1;
+  top: 4.2rem;
+  left: 55.5rem;
+  display: block;
+  width: 93.2rem;
+  height: 55.3rem;
+  object-fit: contain;
+}
+
+.tv-access__gradient--box {
+  top: -13.5rem;
+  right: -20rem;
+  width: 73.8rem;
+  height: 46.2rem;
+}
+
+.tv-access__box-image {
+  position: absolute;
+  z-index: 1;
+  top: 3.2rem;
+  right: 2.5rem;
+  display: block;
+  width: 34.9rem;
+  height: 34.9rem;
+  object-fit: contain;
+  filter: drop-shadow(0 2rem 6rem rgb(0 0 0 / 30%));
+}
+
+.tv-access__purchase {
+  z-index: 2;
+  grid-row: 3;
+}
+
+.tv-access__price-label {
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.tv-access__price {
+  margin-top: 1rem;
+  font-size: 2.9rem;
+  font-variation-settings: "wdth" 127;
+  font-weight: 450;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.tv-access__purchase-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 2.4rem;
+}
+
+.tv-access__action {
+  display: inline-flex;
+  min-height: 5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.7rem;
+  border-radius: 4rem;
+  font-size: 1.8rem;
+  font-weight: 540;
+  line-height: normal;
+  letter-spacing: -0.02em;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.tv-access__action:hover,
+.tv-access__action:focus-visible {
+  outline: none;
+}
+
+.tv-access__action--primary {
+  color: var(--color-page);
+  background: var(--tv-access-accent);
+}
+
+.tv-access__action--primary:hover,
+.tv-access__action--primary:focus-visible {
+  color: var(--color-content);
+  background: var(--color-page);
+}
+
+.tv-access__action--secondary {
+  color: var(--color-content);
+  background: var(--color-page);
+}
+
+.tv-access__action--secondary:hover,
+.tv-access__action--secondary:focus-visible {
+  color: var(--color-page);
+  background: var(--tv-access-accent);
+}
+
+.tv-access__app-title {
+  grid-column: 1 / -1;
+  max-width: 59rem;
+}
+
+.tv-access__stores {
+  display: flex;
+  grid-column: 1;
+  grid-row: 3;
+  align-self: end;
+  gap: 0.8rem;
+}
+
+.tv-access__store {
+  display: grid;
+  width: 5rem;
+  height: 5rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-page);
+  transition: background-color var(--transition-fast);
+}
+
+.tv-access__store:hover,
+.tv-access__store:focus-visible {
+  background: var(--tv-access-accent);
+  outline: none;
+}
+
+.tv-access__store:hover img,
+.tv-access__store:focus-visible img {
+  filter: brightness(0) invert(1);
+}
+
+.tv-access__store img {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: filter var(--transition-fast);
+}
+
+.tv-access__qr {
+  display: block;
+  grid-column: 2;
+  grid-row: 2 / 4;
+  align-self: end;
+  justify-self: end;
+  width: 18.3rem;
+  height: 18.3rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tv-access__card {
+    animation: tv-access-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .tv-access__card:nth-child(2) {
+    animation-delay: 80ms;
+  }
+
+  .tv-access__card:nth-child(3) {
+    animation-delay: 140ms;
+  }
+}
+
+@keyframes tv-access-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.6rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .tv-access {
+    display: flex;
+    width: calc(100% - 3rem);
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3.2rem;
+  }
+
+  .tv-access__card {
+    display: flex;
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+    border-radius: 3rem;
+  }
+
+  .tv-access__smart-tv-image,
+  .tv-access__box-image {
+    position: relative;
+    inset: auto;
+  }
+
+  .tv-access__card--box {
+    padding: 0;
+  }
+
+  .tv-access__copy--smart-tv,
+  .tv-access__copy--box {
+    padding: 2.1rem 1.4rem 0;
+  }
+
+  .tv-access__title {
+    font-size: 2.8rem;
+  }
+
+  .tv-access__description {
+    width: 30rem;
+    margin-top: 1.2rem;
+    color: rgb(255 255 255 / 60%);
+    font-size: 1.6rem;
+  }
+
+  .tv-access__models {
+    margin-top: 0;
+  }
+
+  .tv-access__models-label {
+    font-size: 0.8rem;
+  }
+
+  .tv-access__model-list {
+    gap: 0.5rem 0.3rem;
+    width: 19rem;
+    margin-top: 0.5rem;
+  }
+
+  .tv-access__model {
+    height: 3.2rem;
+    gap: 0.3rem;
+    padding: 0 0.6rem;
+  }
+
+  .tv-access__model span {
+    font-size: 1.1rem;
+  }
+
+  .tv-access__model-logo--lg {
+    width: 2.5rem;
+    height: 1.2rem;
+  }
+
+  .tv-access__model-logo--samsung {
+    width: 5.2rem;
+    height: 1.4rem;
+  }
+
+  .tv-access__model-logo--haier {
+    width: 2.8rem;
+    height: 1.1rem;
+  }
+
+  .tv-access__model-logo--tcl {
+    width: 2.8rem;
+    height: 1.7rem;
+  }
+
+  .tv-access__model-logo--mi {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .tv-access__gradient--smart-tv {
+    top: 5.5rem;
+    right: -14.6rem;
+    width: 45.7rem;
+    height: 26rem;
+  }
+
+  .tv-access__smart-tv-picture {
+    z-index: 1;
+    display: block;
+    order: 2;
+    width: calc(100% - 2.8rem);
+    height: 19rem;
+    margin: 1rem 1.4rem 0;
+    overflow: hidden;
+  }
+
+  .tv-access__smart-tv-image {
+    width: 100%;
+    height: auto;
+    transform: translateY(-2rem);
+  }
+
+  .tv-access__copy--smart-tv {
+    display: contents;
+  }
+
+  .tv-access__copy--smart-tv > .tv-access__title {
+    order: 1;
+    margin: 2.1rem 1.4rem 0;
+  }
+
+  .tv-access__copy--smart-tv > .tv-access__description {
+    order: 1;
+    margin: 1.2rem 1.4rem 0;
+  }
+
+  .tv-access__copy--smart-tv > .tv-access__models {
+    z-index: 2;
+    order: 3;
+    margin: 1.3rem 1.4rem 2.7rem;
+  }
+
+  .tv-access__gradient--box {
+    top: 6rem;
+    right: -10rem;
+    width: 51.5rem;
+    height: 32.2rem;
+  }
+
+  .tv-access__box-image {
+    z-index: 1;
+    width: 20rem;
+    height: 20rem;
+    align-self: center;
+    margin: 2.5rem 0 3.9rem;
+    object-fit: contain;
+  }
+
+  .tv-access__purchase {
+    z-index: 2;
+    padding: 0 1.4rem 1.4rem;
+  }
+
+  .tv-access__price-label {
+    font-size: 1.2rem;
+  }
+
+  .tv-access__price {
+    margin-top: 0.7rem;
+    font-size: 2.8rem;
+  }
+
+  .tv-access__purchase-actions {
+    gap: 0.5rem;
+    margin-top: 1.6rem;
+  }
+
+  .tv-access__action {
+    min-height: 3.7rem;
+    padding: 0.4rem 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .tv-access__card--app {
+    min-height: 21.3rem;
+    padding: 2.1rem 1.4rem 2.3rem;
+  }
+
+  .tv-access__app-title {
+    max-width: 28rem;
+    margin: 0;
+  }
+
+  .tv-access__app-title-break {
+    display: none;
+  }
+
+  .tv-access__stores {
+    gap: 0.9rem;
+    margin-top: 3.2rem;
+    align-self: flex-start;
+  }
+
+  .tv-access__store {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .tv-access__store img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .tv-access__qr {
+    display: none;
+  }
+}

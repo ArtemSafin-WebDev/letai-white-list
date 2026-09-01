@@ -1,9 +1,11 @@
 import '@fontsource-variable/roboto-flex/full.css';
 import './styles/main.scss';
 import { initAccordions } from './accordion';
+import { initCallbackForms } from './callback-form';
 import { initMobileMenu } from './mobile-menu';
-import { initServicesCatalog } from './services-catalog';
+import { initTariffs } from './tariffs';
 
 initMobileMenu();
 initAccordions();
-initServicesCatalog();
+initCallbackForms();
+initTariffs();

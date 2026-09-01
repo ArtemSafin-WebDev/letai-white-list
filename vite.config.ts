@@ -11,4 +11,12 @@ export default defineConfig({
       partialDirectory: resolve(rootDirectory, 'src/components'),
     }),
   ],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(rootDirectory, 'index.html'),
+        letaiTv: resolve(rootDirectory, 'letai-tv.html'),
+      },
+    },
+  },
 });

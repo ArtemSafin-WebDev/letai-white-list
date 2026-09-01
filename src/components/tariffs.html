@@ -1,0 +1,224 @@
+<section class="tariffs" aria-labelledby="tariffs-title" data-tariffs>
+  <h2 class="tariffs__title" id="tariffs-title">Тарифы</h2>
+
+  <div class="tariffs__inner">
+    <div class="tariffs__tabs" role="tablist" aria-label="Тип подключения">
+      <button
+        class="tariffs__tab is-active"
+        id="tariffs-apartment-tab"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        aria-controls="tariffs-apartment"
+        data-tariffs-tab="apartment"
+      >
+        Для квартиры
+      </button>
+      <button
+        class="tariffs__tab"
+        id="tariffs-house-tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="tariffs-house"
+        tabindex="-1"
+        data-tariffs-tab="house"
+      >
+        Для частного сектора
+      </button>
+    </div>
+
+    <div
+      class="tariffs__panel is-active"
+      id="tariffs-apartment"
+      role="tabpanel"
+      aria-labelledby="tariffs-apartment-tab"
+      data-tariffs-panel="apartment"
+    >
+      <div class="tariffs__slider swiper" data-tariffs-slider>
+        <div class="tariffs__list swiper-wrapper">
+          <article class="tariff-card tariff-card--cinema swiper-slide">
+            <div class="tariff-card__visual" aria-hidden="true">
+              <img class="tariff-card__background" src="/assets/tariffs/tariff-cinema-background.png" alt="" />
+            </div>
+            <div class="tariff-card__badges" aria-label="Онлайн-кинотеатры в тарифе">
+              <span>Кинопоиск</span><span>Иви</span><span>Старт</span><span>Амедиатека</span><span>Премиер</span>
+            </div>
+            <div class="tariff-card__info">
+              <h3 class="tariff-card__title">Летай + кинотеатры</h3>
+              <div class="tariff-card__features">
+                <div class="tariff-card__feature">
+                  <span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-speed.svg" alt="" /></span>
+                  <span><strong>до 300</strong><small>Мбит/сек</small></span>
+                </div>
+                <div class="tariff-card__feature">
+                  <span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-tv.svg" alt="" /></span>
+                  <span><strong>100</strong><small>Каналов</small></span>
+                </div>
+              </div>
+              <div class="tariff-card__checkout">
+                <p class="tariff-card__price">325 ₽ <span>/ мес</span></p>
+                <div class="tariff-card__actions">
+                  <a class="tariff-card__connect" href="#callback-form-title">Подключить</a>
+                  <a class="tariff-card__more" href="#callback-form-title">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="tariff-card tariff-card--coin tariff-card--coin-100 swiper-slide">
+            <div class="tariff-card__visual" aria-hidden="true">
+              <img class="tariff-card__background" src="/assets/tariffs/tariff-100-background.png" alt="" />
+            </div>
+            <div class="tariff-card__info">
+              <h3 class="tariff-card__title">Название тарифа</h3>
+              <div class="tariff-card__features">
+                <div class="tariff-card__feature">
+                  <span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-speed.svg" alt="" /></span>
+                  <span><strong>до 300</strong><small>Мбит/сек</small></span>
+                </div>
+                <div class="tariff-card__feature">
+                  <span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-tv.svg" alt="" /></span>
+                  <span><strong>100</strong><small>Каналов</small></span>
+                </div>
+              </div>
+              <div class="tariff-card__checkout">
+                <p class="tariff-card__price">325 ₽ <span>/ мес</span></p>
+                <div class="tariff-card__actions">
+                  <a class="tariff-card__connect" href="#callback-form-title">Подключить</a>
+                  <a class="tariff-card__more" href="#callback-form-title">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="tariff-card tariff-card--cinema swiper-slide">
+            <div class="tariff-card__visual" aria-hidden="true">
+              <img class="tariff-card__background" src="/assets/tariffs/tariff-cinema-background.png" alt="" />
+            </div>
+            <div class="tariff-card__badges" aria-label="Онлайн-кинотеатры в тарифе">
+              <span>Кинопоиск</span><span>Иви</span><span>Старт</span><span>Амедиатека</span><span>Премиер</span>
+            </div>
+            <div class="tariff-card__info">
+              <h3 class="tariff-card__title">Летай + кинотеатры</h3>
+              <div class="tariff-card__features">
+                <div class="tariff-card__feature">
+                  <span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-speed.svg" alt="" /></span>
+                  <span><strong>до 300</strong><small>Мбит/сек</small></span>
+                </div>
+                <div class="tariff-card__feature">
+                  <span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-tv.svg" alt="" /></span>
+                  <span><strong>200</strong><small>Каналов</small></span>
+                </div>
+              </div>
+              <div class="tariff-card__checkout">
+                <p class="tariff-card__price">325 ₽ <span>/ мес</span></p>
+                <div class="tariff-card__actions">
+                  <a class="tariff-card__connect" href="#callback-form-title">Подключить</a>
+                  <a class="tariff-card__more" href="#callback-form-title">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="tariff-card tariff-card--coin tariff-card--coin-200 swiper-slide">
+            <div class="tariff-card__visual" aria-hidden="true">
+              <img class="tariff-card__background" src="/assets/tariffs/tariff-200-background.png" alt="" />
+            </div>
+            <div class="tariff-card__info">
+              <h3 class="tariff-card__title">Название тарифа</h3>
+              <div class="tariff-card__features">
+                <div class="tariff-card__feature">
+                  <span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-speed.svg" alt="" /></span>
+                  <span><strong>до 300</strong><small>Мбит/сек</small></span>
+                </div>
+                <div class="tariff-card__feature">
+                  <span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-tv.svg" alt="" /></span>
+                  <span><strong>200</strong><small>Каналов</small></span>
+                </div>
+              </div>
+              <div class="tariff-card__checkout">
+                <p class="tariff-card__price">325 ₽ <span>/ мес</span></p>
+                <div class="tariff-card__actions">
+                  <a class="tariff-card__connect" href="#callback-form-title">Подключить</a>
+                  <a class="tariff-card__more" href="#callback-form-title">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="tariffs__panel"
+      id="tariffs-house"
+      role="tabpanel"
+      aria-labelledby="tariffs-house-tab"
+      data-tariffs-panel="house"
+      hidden
+    >
+      <div class="tariffs__slider swiper" data-tariffs-slider>
+        <div class="tariffs__list swiper-wrapper">
+          <article class="tariff-card tariff-card--coin tariff-card--coin-100 swiper-slide">
+            <div class="tariff-card__visual" aria-hidden="true">
+              <img class="tariff-card__background" src="/assets/tariffs/tariff-100-background.png" alt="" />
+            </div>
+            <div class="tariff-card__info">
+              <h3 class="tariff-card__title">Название тарифа</h3>
+              <div class="tariff-card__features">
+                <div class="tariff-card__feature"><span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-speed.svg" alt="" /></span><span><strong>до 300</strong><small>Мбит/сек</small></span></div>
+                <div class="tariff-card__feature"><span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-tv.svg" alt="" /></span><span><strong>100</strong><small>Каналов</small></span></div>
+              </div>
+              <div class="tariff-card__checkout"><p class="tariff-card__price">325 ₽ <span>/ мес</span></p><div class="tariff-card__actions"><a class="tariff-card__connect" href="#callback-form-title">Подключить</a><a class="tariff-card__more" href="#callback-form-title">Подробнее</a></div></div>
+            </div>
+          </article>
+
+          <article class="tariff-card tariff-card--cinema swiper-slide">
+            <div class="tariff-card__visual" aria-hidden="true">
+              <img class="tariff-card__background" src="/assets/tariffs/tariff-cinema-background.png" alt="" />
+            </div>
+            <div class="tariff-card__badges" aria-label="Онлайн-кинотеатры в тарифе"><span>Кинопоиск</span><span>Иви</span><span>Старт</span><span>Амедиатека</span><span>Премиер</span></div>
+            <div class="tariff-card__info">
+              <h3 class="tariff-card__title">Летай + кинотеатры</h3>
+              <div class="tariff-card__features">
+                <div class="tariff-card__feature"><span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-speed.svg" alt="" /></span><span><strong>до 300</strong><small>Мбит/сек</small></span></div>
+                <div class="tariff-card__feature"><span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-tv.svg" alt="" /></span><span><strong>100</strong><small>Каналов</small></span></div>
+              </div>
+              <div class="tariff-card__checkout"><p class="tariff-card__price">325 ₽ <span>/ мес</span></p><div class="tariff-card__actions"><a class="tariff-card__connect" href="#callback-form-title">Подключить</a><a class="tariff-card__more" href="#callback-form-title">Подробнее</a></div></div>
+            </div>
+          </article>
+
+          <article class="tariff-card tariff-card--coin tariff-card--coin-200 swiper-slide">
+            <div class="tariff-card__visual" aria-hidden="true">
+              <img class="tariff-card__background" src="/assets/tariffs/tariff-200-background.png" alt="" />
+            </div>
+            <div class="tariff-card__info">
+              <h3 class="tariff-card__title">Название тарифа</h3>
+              <div class="tariff-card__features">
+                <div class="tariff-card__feature"><span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-speed.svg" alt="" /></span><span><strong>до 300</strong><small>Мбит/сек</small></span></div>
+                <div class="tariff-card__feature"><span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-tv.svg" alt="" /></span><span><strong>200</strong><small>Каналов</small></span></div>
+              </div>
+              <div class="tariff-card__checkout"><p class="tariff-card__price">325 ₽ <span>/ мес</span></p><div class="tariff-card__actions"><a class="tariff-card__connect" href="#callback-form-title">Подключить</a><a class="tariff-card__more" href="#callback-form-title">Подробнее</a></div></div>
+            </div>
+          </article>
+
+          <article class="tariff-card tariff-card--cinema swiper-slide">
+            <div class="tariff-card__visual" aria-hidden="true">
+              <img class="tariff-card__background" src="/assets/tariffs/tariff-cinema-background.png" alt="" />
+            </div>
+            <div class="tariff-card__badges" aria-label="Онлайн-кинотеатры в тарифе"><span>Кинопоиск</span><span>Иви</span><span>Старт</span><span>Амедиатека</span><span>Премиер</span></div>
+            <div class="tariff-card__info">
+              <h3 class="tariff-card__title">Летай + кинотеатры</h3>
+              <div class="tariff-card__features">
+                <div class="tariff-card__feature"><span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-speed.svg" alt="" /></span><span><strong>до 300</strong><small>Мбит/сек</small></span></div>
+                <div class="tariff-card__feature"><span class="tariff-card__feature-icon"><img src="/assets/tariffs/tariff-tv.svg" alt="" /></span><span><strong>200</strong><small>Каналов</small></span></div>
+              </div>
+              <div class="tariff-card__checkout"><p class="tariff-card__price">325 ₽ <span>/ мес</span></p><div class="tariff-card__actions"><a class="tariff-card__connect" href="#callback-form-title">Подключить</a><a class="tariff-card__more" href="#callback-form-title">Подробнее</a></div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

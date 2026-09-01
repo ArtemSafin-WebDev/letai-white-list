@@ -1,0 +1,128 @@
+<section class="callback-form" aria-labelledby="callback-form-title" data-callback-section>
+  <img
+    class="callback-form__artwork"
+    src="/assets/callback-headset.png"
+    alt=""
+    width="1536"
+    height="1024"
+    loading="lazy"
+    decoding="async"
+    aria-hidden="true"
+  />
+
+  <div class="callback-form__content">
+    <div class="callback-form__heading">
+      <h2 class="callback-form__title" id="callback-form-title">Оставьте заявку</h2>
+      <p class="callback-form__description">
+        <span class="callback-form__description-desktop">
+          Наши специалисты перезвонят Вам<br />
+          и помогут подобрать лучшее решение
+        </span>
+        <span class="callback-form__description-mobile">
+          Заполните данные и наши специалисты<br />
+          свяжутся с вами
+        </span>
+      </p>
+    </div>
+
+    <form
+      class="callback-form__form"
+      action="/bitrix/services/main/ajax.php?mode=class&amp;c=tattelecom%3Aform&amp;action=sendLead"
+      method="post"
+      novalidate
+      data-callback-form
+    >
+      <div class="callback-form__fields">
+        <label class="callback-form__field">
+          <span class="callback-form__label">Ваше имя</span>
+          <input
+            class="callback-form__input"
+            type="text"
+            name="firstname"
+            autocomplete="name"
+            placeholder="Константин"
+            aria-describedby="callback-name-error"
+            data-callback-name
+          />
+          <span
+            class="callback-form__error"
+            id="callback-name-error"
+            role="alert"
+            data-callback-error="name"
+          ></span>
+        </label>
+
+        <label class="callback-form__field">
+          <span class="callback-form__label">Телефон</span>
+          <input
+            class="callback-form__input"
+            type="tel"
+            name="phone"
+            autocomplete="tel"
+            inputmode="tel"
+            placeholder="+ 7 000 000-00-00"
+            aria-describedby="callback-phone-error"
+            data-callback-phone
+          />
+          <span
+            class="callback-form__error"
+            id="callback-phone-error"
+            role="alert"
+            data-callback-error="phone"
+          ></span>
+        </label>
+      </div>
+
+      <div class="callback-form__actions">
+        <button class="callback-form__submit" type="submit" data-callback-submit>
+          <span data-callback-submit-label>Жду звонка</span>
+        </button>
+        <p class="callback-form__legal">
+          Нажимая кнопку «Продолжить»,<br />
+          вы принимаете условия
+          <a href="https://letai.ru/app/terms/" target="_blank" rel="noreferrer">
+            пользовательского соглашения
+          </a>
+          и
+          <a href="https://letai.ru/app/personaldata/" target="_blank" rel="noreferrer">
+            политику конфиденциальности
+          </a>
+        </p>
+      </div>
+
+      <p
+        class="callback-form__submit-error"
+        role="alert"
+        hidden
+        data-callback-submit-error
+      ></p>
+    </form>
+  </div>
+</section>
+
+<div class="callback-success-modal" aria-hidden="true" data-callback-success-modal>
+  <div
+    class="callback-success-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="callback-success-title"
+    tabindex="-1"
+    data-callback-success-dialog
+  >
+    <h2 class="callback-success-modal__title" id="callback-success-title">Спасибо!</h2>
+    <p class="callback-success-modal__text">
+      Ваша заявка принята в обработку.<br />
+      Мы свяжемся с Вами в ближайшее время.
+    </p>
+    <button
+      class="callback-success-modal__close"
+      type="button"
+      aria-label="Закрыть сообщение"
+      data-callback-success-close
+    >
+      <svg viewBox="0 0 15 15" aria-hidden="true" focusable="false">
+        <path d="M8.47078 6.93112L14.631 13.0914L13.4758 14.2466L7.31552 8.08639L1.15527 14.2466L4.5296e-06 13.0914L6.16026 6.93112L0.384632 1.1555L1.5399 0.000235368L7.31552 5.77586L13.0911 0.000235368L14.2464 1.1555L8.47078 6.93112Z" />
+      </svg>
+    </button>
+  </div>
+</div>
