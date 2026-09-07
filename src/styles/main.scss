@@ -104,6 +104,27 @@ button {
   font: inherit;
 }
 
+// Common interaction transitions; component-specific motion takes precedence.
+:where(.letai-tv-page) :where(a, button, summary, input, select, textarea) {
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast),
+    transform var(--transition-fast),
+    text-decoration-color var(--transition-fast);
+}
+
+:where(.letai-tv-page) :where(a, button, summary) :where(img, svg) {
+  transition:
+    filter var(--transition-fast),
+    fill var(--transition-fast),
+    stroke var(--transition-fast),
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
 .footer {
   overflow: hidden;
   border-radius: var(--footer-radius-desktop) var(--footer-radius-desktop) 0 0;

@@ -1,0 +1,92 @@
+<header class="tv-header" data-tv-header>
+  <div class="tv-header__topbar">
+    <div class="tv-header__container tv-header__topbar-inner">
+      <nav class="tv-header__utility" aria-label="Разделы сайта">
+        <a href="https://letai.ru/">Частным клиентам</a>
+        <a href="https://letai.ru/business/">Бизнесу</a>
+        <a href="https://my.tattelecom.ru/">О компании</a>
+      </nav>
+      <div class="tv-header__utility-actions">
+        <button type="button" class="tv-header__city" data-tv-city-open aria-haspopup="dialog">
+          <span class="tv-header__icon tv-header__icon--location" aria-hidden="true"></span>
+          <span data-tv-city-name>Казань</span>
+        </button>
+        <a class="tv-header__login" href="https://newlk.letai.ru/">
+          <span class="tv-header__icon tv-header__icon--user-solid" aria-hidden="true"></span>Войти
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="tv-header__container tv-header__main">
+    <a class="tv-header__logo" href="/letai-tv.html" aria-label="Летай ТВ — на главную">
+      <img src="/assets/tv-logotype.png" width="548" height="108" alt="Летай ТВ" />
+    </a>
+    <nav class="tv-header__nav" aria-label="Услуги Летай">{{> header-tv-nav}}</nav>
+    <div class="tv-header__contact">
+      <div class="tv-header__phone-contact">
+        <a class="tv-header__phone" href="tel:+73833055195">8 (383) 305-51-95</a>
+        <a class="tv-header__telegram" href="" aria-label="Telegram">
+          <span class="tv-header__icon tv-header__icon--telegram" aria-hidden="true"></span>
+        </a>
+      </div>
+      <a class="tv-header__request" href="#callback-form-title">Оставить заявку</a>
+    </div>
+    <div class="tv-header__mobile-actions">
+      <a class="tv-header__icon-button" href="https://newlk.letai.ru/" aria-label="Личный кабинет"><span class="tv-header__icon tv-header__icon--mobile-profile" aria-hidden="true"></span></a>
+      <button class="tv-header__icon-button" type="button" data-tv-search-open aria-label="Поиск" aria-haspopup="dialog"><span class="tv-header__icon tv-header__icon--mobile-search" aria-hidden="true"></span></button>
+      <button class="tv-header__icon-button tv-header__menu-toggle" type="button" data-tv-menu-open aria-label="Открыть меню" aria-controls="tv-mobile-menu" aria-expanded="false"><span class="tv-header__icon tv-header__icon--mobile-burger" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</header>
+
+<dialog class="tv-mobile-menu" id="tv-mobile-menu" aria-label="Меню Летай ТВ" data-tv-menu>
+  <div class="tv-mobile-menu__header">
+    <button class="tv-header__city" type="button" data-tv-city-open aria-haspopup="dialog"><span class="tv-header__icon tv-header__icon--location" aria-hidden="true"></span><span data-tv-city-name>Казань</span></button>
+    <div class="tv-header__mobile-actions">
+      <a class="tv-header__icon-button" href="https://newlk.letai.ru/" aria-label="Личный кабинет"><span class="tv-header__icon tv-header__icon--mobile-profile" aria-hidden="true"></span></a>
+      <button class="tv-header__icon-button" type="button" data-tv-search-open aria-label="Поиск" aria-haspopup="dialog"><span class="tv-header__icon tv-header__icon--mobile-search" aria-hidden="true"></span></button>
+      <button class="tv-header__icon-button tv-header__menu-toggle" type="button" data-tv-menu-close aria-label="Закрыть меню" autofocus><span class="tv-header__icon tv-header__icon--mobile-close" aria-hidden="true"></span></button>
+    </div>
+  </div>
+  <nav class="tv-mobile-menu__utility" aria-label="Разделы сайта">
+    <a href="https://letai.ru/">Частным клиентам</a><a href="https://letai.ru/business/">Бизнесу</a><a href="https://my.tattelecom.ru/">О компании</a>
+  </nav>
+  <nav class="tv-mobile-menu__nav" aria-label="Услуги Летай">{{> header-tv-nav}}<a href="https://letai.ru/pay/">Оплатить</a></nav>
+</dialog>
+
+<dialog class="tv-city-dialog" aria-labelledby="tv-city-title" data-tv-city-dialog>
+  <div class="tv-city-dialog__panel">
+    <button class="tv-header__icon-button tv-city-dialog__close" type="button" data-tv-dialog-close aria-label="Закрыть выбор города"><span class="tv-header__cross" aria-hidden="true"></span></button>
+    <div class="tv-city-dialog__list-section">
+      <h2 id="tv-city-title">Республика Татарстан</h2>
+      <div class="tv-city-dialog__cities" data-tv-cities></div>
+    </div>
+    <form class="tv-city-dialog__form" data-tv-city-form>
+      <input type="hidden" name="district" data-tv-city-district-value />
+      <input type="hidden" name="settlement" data-tv-city-settlement-value />
+      <h3>Другой населённый пункт</h3>
+      <div class="tv-city-select" data-tv-city-district>
+        <button class="tv-city-select__trigger" id="tv-city-district" type="button" role="combobox" aria-label="Район" aria-expanded="false" aria-haspopup="listbox" aria-controls="tv-city-district-options" data-city-select-trigger>
+          <span data-city-select-label>Район</span><span class="tv-city-select__chevron" aria-hidden="true"></span>
+        </button>
+        <div class="tv-city-select__options" id="tv-city-district-options" role="listbox" aria-label="Район" popover="manual" data-city-select-options></div>
+      </div>
+      <div class="tv-city-select" data-tv-city-settlement>
+        <button class="tv-city-select__trigger" id="tv-city-settlement" type="button" role="combobox" aria-label="Населённый пункт" aria-expanded="false" aria-haspopup="listbox" aria-controls="tv-city-settlement-options" disabled data-city-select-trigger>
+          <span data-city-select-label>Выберите район</span><span class="tv-city-select__chevron" aria-hidden="true"></span>
+        </button>
+        <div class="tv-city-select__options" id="tv-city-settlement-options" role="listbox" aria-label="Населённый пункт" popover="manual" data-city-select-options></div>
+      </div>
+      <button class="tv-header__request" type="submit">Выбрать город</button>
+    </form>
+  </div>
+</dialog>
+
+<dialog class="tv-search-dialog" aria-labelledby="tv-search-title" data-tv-search-dialog>
+  <button class="tv-header__icon-button tv-city-dialog__close" type="button" data-tv-dialog-close aria-label="Закрыть поиск"><span class="tv-header__cross" aria-hidden="true"></span></button>
+  <h2 id="tv-search-title">Что вас интересует?</h2>
+  <label class="tv-header__sr-only" for="tv-header-search">Поиск по разделам</label>
+  <input id="tv-header-search" type="search" placeholder="Поиск по разделам" autocomplete="off" data-tv-search-input />
+  <nav class="tv-search-dialog__results" aria-label="Результаты поиска" data-tv-search-results></nav>
+  <p data-tv-search-empty hidden>Ничего не найдено. Попробуйте другой запрос.</p>
+</dialog>
