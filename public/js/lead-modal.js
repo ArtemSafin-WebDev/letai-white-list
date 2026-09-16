@@ -10,8 +10,6 @@
     '[tabindex]:not([tabindex="-1"])',
   ].join(',');
 
-  var defaultEndpoint =
-    '/bitrix/services/main/ajax.php?mode=class&c=tattelecom%3Aform&action=sendLead';
   var smartCaptchaSiteKey = 'ysc1_lcu3tXGbKwUv0jZbi5Hh1Km8iaq0LWkynZA7R7uB5dc09f9d';
   var isLocalDevelopment = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
 
@@ -276,59 +274,30 @@
     }
 
     function sendLead(captchaToken) {
-      var endpoint = window.LETAI_LEAD_FORM_ENDPOINT || form.action || defaultEndpoint;
-      var payload = new URLSearchParams();
-      var sessid = window.BX && window.BX.bitrix_sessid ? window.BX.bitrix_sessid() : '';
-
-      if (sessid) payload.set('sessid', sessid);
-      payload.set('post[firstname]', nameInput.value.trim());
-      payload.set('post[phone]', phoneInput.value);
-      payload.set('post[modal-callback-agree]', 'on');
-      payload.set('post[smart-token]', captchaToken);
-      payload.set('post[formId]', '.default');
-      payload.set('post[param_referer]', document.title);
-      payload.set('post[currentUrl]', window.location.href);
-
-      function request(csrfToken) {
-        var headers = {
-          Accept: 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        };
-
-        if (csrfToken) headers['X-Bitrix-Csrf-Token'] = csrfToken;
-
-        return fetch(endpoint, {
-          method: 'POST',
-          body: payload,
-          headers: headers,
-          credentials: 'same-origin',
-        }).then(function (response) {
-          if (!response.ok) {
-            throw new Error('Request failed with status ' + response.status);
-          }
-          return response.json();
-        });
+      if (!window.BX || !window.BX.ajax || !window.BX.ajax.runComponentAction) {
+        return Promise.reject(new Error('Bitrix AJAX API is unavailable'));
       }
 
-      return request(sessid).then(function (result) {
-        var csrfError = result.errors && result.errors.find(function (error) {
-          return error.code === 'invalid_csrf';
-        });
-        var refreshedCsrf = csrfError && csrfError.customData && csrfError.customData.csrf;
+      var formData = new FormData(form);
+      var data = {
+        firstname: nameInput.value.trim(),
+        phone: phoneInput.value,
+        'modal-callback-agree': 'on',
+        'smart-token': captchaToken,
+        formId: formData.get('formId') || 'whitelist-lead-modal',
+        param_referer: formData.get('param_referer') || document.title,
+        currentUrl: window.location.href,
+      };
 
-        return refreshedCsrf ? request(refreshedCsrf) : result;
-      }).then(function (result) {
-        if (
-          result.status === 'error' ||
-          (result.data && result.data.errorCode) ||
-          (result.errors && result.errors.length)
-        ) {
-          var message =
-            (result.errors && result.errors[0] && result.errors[0].message) ||
-            (result.data && result.data.errorCode) ||
-            'Lead rejected';
-          throw new Error(message);
+      return window.BX.ajax.runComponentAction('tattelecom:form', 'sendLead', {
+        mode: 'class',
+        data: { post: data },
+      }).then(function (response) {
+        if (response.data && response.data.errorCode) {
+          throw new Error(response.data.errorCode);
         }
+
+        showSuccess();
       });
     }
 
@@ -374,7 +343,6 @@
 
       getCaptchaToken()
         .then(sendLead)
-        .then(showSuccess)
         .catch(function (error) {
           console.error('Lead form submission failed', error);
           submitError.textContent =
