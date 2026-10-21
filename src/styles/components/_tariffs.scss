@@ -61,6 +61,18 @@
   background: var(--color-black);
 }
 
+.tariffs__tab--letai,
+.tariffs__tab--letai.is-active {
+  color: var(--color-text);
+  background: var(--tariffs-accent);
+}
+
+.tariffs__tab--native-content,
+.tariffs__tab--native-content.is-active {
+  color: var(--color-text);
+  background: #00a658;
+}
+
 .tariffs__tab:focus-visible {
   outline: 0.2rem solid var(--tariffs-accent);
   outline-offset: 0.2rem;
@@ -278,6 +290,12 @@
   }
 }
 
+.tariff-card__actions--single {
+  grid-template-columns: minmax(0, 15rem);
+  justify-content: center;
+  margin-top: 0;
+}
+
 .tariff-card__connect,
 .tariff-card__more {
   display: inline-flex;
@@ -301,6 +319,10 @@
   background: var(--tariffs-accent);
 }
 
+.tariff-card__connect--green {
+  background: #34c759;
+}
+
 .tariff-card__connect:hover,
 .tariff-card__connect:focus-visible {
   color: var(--color-text);
@@ -308,10 +330,44 @@
   outline: none;
 }
 
+.tariff-card__connect--green:hover,
+.tariff-card__connect--green:focus-visible {
+  background: #2eaf4f;
+}
+
 .tariff-card__more:hover,
 .tariff-card__more:focus-visible {
   color: var(--tariffs-accent);
   outline: none;
+}
+
+// The tariff details page uses the same cards in the wider, three-column layout
+// from the dedicated "Другие тарифы" design.
+@media (min-width: 768px) {
+  .tariffs--other {
+    padding-bottom: 3.1rem;
+  }
+
+  .tariffs--other .tariffs__inner {
+    width: min(calc(100% - 4rem), 143.5rem);
+  }
+
+  .tariffs--other .tariffs__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .tariffs--other .tariff-card {
+    height: 52.7rem;
+  }
+
+  .tariffs--other .tariff-card::before {
+    padding-bottom: 0;
+  }
+
+  .tariffs--other .tariff-card:nth-child(n + 4) {
+    display: none;
+  }
 }
 
 @keyframes tariffs-panel-in {
@@ -343,9 +399,16 @@
   }
 
   .tariffs__tabs {
+    width: calc(100% - 3rem);
     height: 2.6rem;
     margin-inline: auto;
     padding: 0.1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tariffs__tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .tariffs__tab {
